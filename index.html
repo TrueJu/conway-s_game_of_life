@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's game of life</title>
+    <style>
+        :root {
+            --grid-cols: 1;
+            --grid-rows: 1;
+        }
+        grid {
+            display: grid;
+            grid-gap: 0em;
+            grid-template-rows: repeat(var(--grid-rows), 1fr);
+            grid-template-columns: repeat(var(--grid-cols), 1fr);
+        }
+        .grid-item {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <grid></grid>
+    <script src="main.js"></script>
+</body>
+</html>
