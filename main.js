@@ -1,10 +1,10 @@
 class game {
-    constructor(length, height) {
+    constructor(length) {
         this.length = length;
-        this.height = height;
+        this.height = this.length;
         this.grid = []
-        this.blackSpread = 0.2;
-        this.cycleTime = 10;
+        this.blackSpread = 0.6;
+        this.cycleTime = 50;
         this.grid_el = document.getElementsByTagName("grid")[0];
         this.wait=ms=>new Promise(resolve => setTimeout(resolve, ms)); 
     }
@@ -58,7 +58,7 @@ class game {
     }
     getNeighbours(index, grid) {
         this.blackNeighbours = 0;
-        this.directions = [-81, -80, -79, 1, +81, +80, +79, -1];
+        this.directions = [-(this.length + 1), -this.length, -(this.length-1), 1, +(this.length+1), +this.length, +(this.length-1), -1];
         for(var d=0;d<this.directions.length;d++) {
             if(grid[0][index + this.directions[d]] == 1) {
                 this.blackNeighbours += 1;
@@ -100,7 +100,7 @@ class game {
         }
     }
 }
-Game = new game(80, 80);
+Game = new game(100);
 
 game = Game.newEmptyGrid();
 Game.initGrid(true);
