@@ -1,2 +1,2 @@
-# conway-s_game_of_life
-Conway's Game of life in JavaScript
+# Conways game of life
+[Online playground](https://trueju.github.io/conway-s_game_of_life/)
